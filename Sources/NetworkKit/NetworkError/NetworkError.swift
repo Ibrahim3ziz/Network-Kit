@@ -20,6 +20,7 @@ public struct NetworkError: LocalizedError, Decodable {
 /// Enumeration of common default network-related errors.
 public enum DefaultErrors: Decodable, Sendable {
     case invalidResponse
+    case networkFailure
     case serverError
     case decodingError
     case unknownError
@@ -34,6 +35,8 @@ public enum DefaultErrors: Decodable, Sendable {
             return "There is error occurred , try again later"
         case .decodingError:
             return "Failed to decoded data received from server"
+        case .networkFailure:
+            return "Network request failed. Please try again later."
         }
     }
 }
