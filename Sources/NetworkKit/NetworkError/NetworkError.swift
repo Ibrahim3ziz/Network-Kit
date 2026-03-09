@@ -12,7 +12,7 @@ public struct NetworkError: LocalizedError, Decodable {
     var message: String?
     var specificError: DefaultErrors?
     
-    init(errorType: DefaultErrors) {
+    public init(errorType: DefaultErrors) {
         self.specificError = errorType
     }
 }
